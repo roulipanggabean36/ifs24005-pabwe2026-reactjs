@@ -47,9 +47,14 @@ export default function DetailPage() {
     <article className="mx-auto max-w-3xl space-y-6">
       <div className="grid aspect-video place-items-center overflow-hidden rounded-2xl bg-slate-100">
         {cover ? (
-          <img src={cover} alt={lostFound.title} className="h-full w-full object-contain" />
+          <img 
+            src={cover} 
+            alt={`Foto ${lostFound.title}`} 
+            loading="lazy" 
+            className="h-full w-full object-contain" 
+          />
         ) : (
-          <IconPhoto size={56} className="text-slate-300" />
+          <IconPhoto size={56} className="text-slate-500" aria-hidden="true" />
         )}
       </div>
 

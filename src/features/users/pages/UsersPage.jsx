@@ -28,7 +28,7 @@ export default function UsersPage() {
           <p className="text-slate-500">Daftar seluruh pengguna terdaftar.</p>
         </div>
         <div className="relative w-full sm:w-72">
-          <IconSearch size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+          <IconSearch size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
           <input
             type="search"
             aria-label="Cari pengguna"

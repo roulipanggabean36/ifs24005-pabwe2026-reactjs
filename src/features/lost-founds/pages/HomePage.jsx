@@ -121,7 +121,7 @@ export default function HomePage() {
           onClick={() => setShowAdd(true)}
           className="inline-flex items-center gap-2 rounded-lg bg-teal-700 px-4 py-2 font-semibold text-white hover:bg-teal-800"
         >
-          <IconPlus size={18} /> Lapor barang
+          <IconPlus size={18} aria-hidden="true" /> Lapor barang
         </button>
       </div>
 
@@ -134,7 +134,7 @@ export default function HomePage() {
 
       <div className="flex flex-wrap items-center gap-3">
         <div className="relative w-full sm:w-72">
-          <IconSearch size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+          <IconSearch size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" aria-hidden="true" />
           <input
             type="search"
             aria-label="Cari laporan"
@@ -171,12 +171,17 @@ export default function HomePage() {
             const isOwner = item.user_id === profile.id;
             return (
               <li key={item.id} className="flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white">
-                <Link to={`/lost-founds/${item.id}`} className="block">
+                <Link to={`/lost-founds/${item.id}`} className="block" aria-label={`Lihat detail ${item.title}`}>
                   <div className="grid aspect-video place-items-center bg-slate-100">
                     {cover ? (
-                      <img src={cover} alt={item.title} className="h-full w-full object-cover" />
+                      <img 
+                        src={cover} 
+                        alt={`Foto ${item.title}`} 
+                        loading="lazy" 
+                        className="h-full w-full object-cover" 
+                      />
                     ) : (
-                      <IconPhoto size={36} className="text-slate-300" />
+                      <IconPhoto size={36} className="text-slate-500" aria-hidden="true" />
                     )}
                   </div>
                 </Link>

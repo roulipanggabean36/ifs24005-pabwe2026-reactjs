@@ -12,7 +12,6 @@ export default function LostFoundLayout() {
   const isProfile = useSelector((state) => state.isProfile);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  // Route guard: verifikasi token dengan memuat profil; token tidak valid -> logout.
   useEffect(() => {
     if (isAuthLogin && !isProfile) {
       dispatch(asyncSetProfile()).then((success) => {
@@ -21,16 +20,11 @@ export default function LostFoundLayout() {
     }
   }, [isAuthLogin, isProfile, dispatch]);
 
-  if (!isAuthLogin) {
-    return <Navigate to="/auth/login" replace />;
-  }
-
-  if (!isProfile) {
-    return <div className="grid min-h-screen place-items-center text-slate-500">Memuat sesi...</div>;
-  }
+  if (!isAuthLogin) return <Navigate to="/auth/login" replace />;
+  if (!isProfile) return <div className="grid min-h-screen place-items-center text-slate-500">Memuat sesi...</div>;
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-slate-50">
       <NavbarComponent onMenuClick={() => setSidebarOpen(true)} />
       <div className="flex flex-1">
         <SidebarComponent open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
