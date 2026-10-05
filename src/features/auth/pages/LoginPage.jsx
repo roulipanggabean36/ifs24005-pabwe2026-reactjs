@@ -35,9 +35,9 @@ export default function LoginPage() {
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-semibold mb-1">Email</label>
+        <label htmlFor="login-email-input" className="block text-sm font-semibold mb-1">Email</label>
         <input
-          id="email"
+          id="login-email-input"
           type="email"
           value={email}
           onChange={handleEmail}
@@ -48,9 +48,9 @@ export default function LoginPage() {
       </div>
 
       <div>
-        <label htmlFor="password" className="block text-sm font-semibold mb-1">Kata sandi</label>
+        <label htmlFor="login-password-input" className="block text-sm font-semibold mb-1">Kata sandi</label>
         <input
-          id="password"
+          id="login-password-input"
           type="password"
           value={password}
           onChange={handlePassword}
@@ -61,6 +61,7 @@ export default function LoginPage() {
 
       <button
         type="submit"
+        id="login-submit-button"
         disabled={loading}
         className="w-full rounded-lg bg-teal-700 py-2.5 font-semibold text-white hover:bg-teal-800 disabled:opacity-60"
       >
