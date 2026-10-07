@@ -49,7 +49,7 @@ export default function DetailPage() {
         {cover ? (
           <img 
             src={cover} 
-            alt={`Foto ${lostFound.title}`} 
+            alt={lostFound.title} 
             loading="lazy" 
             className="h-full w-full object-contain" 
           />
